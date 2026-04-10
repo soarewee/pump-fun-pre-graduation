@@ -2,6 +2,31 @@
 
 This repository is focused on researching **pump.fun tokens before graduation / AMM migration** on Solana using Dune.
 
+## Dune Access In This Repo
+
+This workspace now includes a small repo-local CLI at `./bin/dune`.
+
+Setup:
+
+1. Create a Dune API key from https://dune.com/settings/api
+2. Copy `.env.example` to `.env`
+3. Export the key in your shell:
+
+```bash
+export DUNE_API_KEY=your_api_key_here
+```
+
+Examples:
+
+```bash
+./bin/dune run --file queries/pumpfun_dashboard_v1/04_coverage_summary.sql
+./bin/dune exec-sql --file queries/pumpfun_dashboard_v1/01_launch_inspection.sql
+./bin/dune status <execution_id>
+./bin/dune results <execution_id>
+```
+
+Inside Codex, the Dune MCP toolset is already active for this workspace. The local CLI is for direct terminal usage against the same Dune API.
+
 ## Summary
 
 Dune appears to have enough usable decoded data to support a serious pre-graduation analysis for pump.fun.
